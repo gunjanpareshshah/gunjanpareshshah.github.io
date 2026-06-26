@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Republic World — Published Work | Gunjan Shah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,300;1,9..144,400&family=Libre+Franklin:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0A0A08;--s1:#121210;--s2:#181816;
+  --gold:#E9BB52;--gold2:rgba(233,187,82,0.1);--gold3:rgba(233,187,82,0.06);
+  --white:#EDEAE2;--mid:#70706A;--rule:rgba(237,234,226,0.06);
+  --serif:'Fraunces',Georgia,serif;--sans:'Libre Franklin',system-ui,sans-serif;
+}
+body{background:var(--bg);color:var(--white);font-family:var(--sans);font-size:16px;line-height:1.65;min-height:100vh;}
+
+/* NAV */
+nav{display:flex;justify-content:space-between;align-items:center;padding:0 3rem;height:56px;border-bottom:1px solid var(--rule);background:var(--s1);}
+.nav-logo{font-family:var(--serif);font-weight:700;font-size:1rem;color:var(--white);text-decoration:none;}
+.nav-logo em{font-style:italic;font-weight:300;color:var(--gold);}
+.nav-back{font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:.5rem;transition:color .2s;}
+.nav-back:hover{color:var(--gold);}
+
+/* HEADER */
+.header{padding:5rem 8vw 4rem;border-bottom:1px solid var(--rule);}
+.header-label{font-family:var(--sans);font-weight:600;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;display:flex;align-items:center;gap:.6rem;}
+.header-label::before{content:'';display:block;width:20px;height:1px;background:var(--gold);}
+.header-title{font-family:var(--serif);font-weight:700;font-size:clamp(2rem,4vw,3.5rem);line-height:1.05;letter-spacing:-.02em;margin-bottom:1.25rem;}
+.header-title em{font-style:italic;font-weight:300;color:var(--gold);}
+.header-desc{font-size:.93rem;color:var(--mid);line-height:1.85;max-width:600px;font-weight:300;}
+.header-desc strong{color:var(--white);font-weight:500;}
+
+/* PROOF STRIP */
+.proof-strip{display:flex;gap:3rem;padding:2rem 8vw;background:var(--s2);border-bottom:1px solid var(--rule);flex-wrap:wrap;}
+.proof-item .n{font-family:var(--serif);font-weight:700;font-size:1.8rem;color:var(--gold);display:block;line-height:1;}
+.proof-item .l{font-size:.7rem;font-weight:500;color:var(--mid);text-transform:uppercase;letter-spacing:.1em;}
+
+/* NOTE */
+.note{margin:2.5rem 8vw 0;padding:1.1rem 1.5rem;border:1px solid rgba(233,187,82,.15);background:var(--gold2);font-size:.82rem;color:var(--mid);line-height:1.7;border-radius:2px;}
+.note strong{color:var(--gold);}
+
+/* ARTICLES */
+.articles{padding:2.5rem 8vw 5rem;}
+.articles-grid{display:flex;flex-direction:column;border-top:1px solid var(--rule);}
+
+.article-row{display:grid;grid-template-columns:auto 1fr auto;gap:2rem;align-items:start;padding:1.5rem 0;border-bottom:1px solid var(--rule);text-decoration:none;color:var(--white);transition:background .2s;border-radius:3px;padding-left:.75rem;padding-right:.75rem;}
+.article-row:hover{background:var(--s2);}
+
+.article-num{font-family:var(--serif);font-style:italic;font-weight:300;font-size:1.6rem;color:rgba(233,187,82,.2);line-height:1;padding-top:.2rem;min-width:2rem;transition:color .3s;}
+.article-row:hover .article-num{color:rgba(233,187,82,.4);}
+
+.article-body{}
+.article-meta{display:flex;align-items:center;gap:1rem;margin-bottom:.35rem;}
+.article-cat{font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);}
+.article-date{font-size:.65rem;color:var(--mid);}
+.article-title{font-family:var(--serif);font-weight:600;font-size:1rem;line-height:1.35;color:var(--white);}
+
+.article-arrow{font-size:.95rem;color:var(--gold);opacity:0;padding-top:.25rem;transition:opacity .2s,transform .2s;flex-shrink:0;}
+.article-row:hover .article-arrow{opacity:1;transform:translateX(3px);}
+
+/* FOOTER */
+footer{border-top:1px solid var(--rule);padding:2.5rem 8vw;display:flex;justify-content:space-between;align-items:center;background:var(--s1);}
+.footer-note{font-size:.75rem;color:var(--mid);}
+.footer-link{font-family:var(--serif);font-style:italic;font-weight:300;font-size:.9rem;color:var(--gold);text-decoration:none;}
+.footer-link:hover{text-decoration:underline;}
+
+@media(max-width:700px){
+  nav{padding:0 1.5rem;}
+  .header{padding:3rem 6vw 2.5rem;}
+  .proof-strip{padding:1.5rem 6vw;gap:2rem;}
+  .note{margin:2rem 6vw 0;}
+  .articles{padding:2rem 6vw 4rem;}
+  .article-row{grid-template-columns:auto 1fr;}
+  .article-arrow{display:none;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">Gunjan <em>Shah</em></a>
+  <a class="nav-back" href="index.html">&#8592; Back to portfolio</a>
+</nav>
+
+<div class="header">
+  <div class="header-label">Published Work</div>
+  <h1 class="header-title">Republic World — <em>Verified bylines</em></h1>
+  <p class="header-desc">A collection of articles published under my byline at <strong>Republic World</strong>, one of India's largest digital news platforms. I joined as an SEO content writer during the platform's dry-run stage — among the first writers to get articles live — and went on to write exclusive pieces for the brand across entertainment, tech, science, and lifestyle verticals.</p>
+</div>
+
+<div class="proof-strip">
+  <div class="proof-item"><span class="n">10+</span><span class="l">Articles below</span></div>
+  <div class="proof-item"><span class="n">2019–20</span><span class="l">Publication period</span></div>
+  <div class="proof-item"><span class="n">500K+</span><span class="l">Platform readers</span></div>
+  <div class="proof-item"><span class="n">Live</span><span class="l">All links verified</span></div>
+</div>
+
+<div class="note">
+  <strong>Note:</strong> Republic World removed author profile pages during a server migration. The byline <strong>"Published By: Gunjan Shah"</strong> is still visible in the metadata and body of each article below. All links are live and open directly to the published piece.
+</div>
+
+<div class="articles">
+  <div class="articles-grid">
+
+    <a class="article-row" href="https://www.republicworld.com/entertainment/bollywood/bollywoodcelebritieswhochangednamesbeforeenteringbollywood" target="_blank" rel="noopener">
+      <div class="article-num">01</div>
+      <div class="article-body">
+        <div class="article-meta"><span class="article-cat">Entertainment · Bollywood</span><span class="article-date">14 Oct 2019</span></div>
+        <div class="article-title">Akshay, Tiger, Saif &amp; more who have changed names before Bollywood</div>
+      </div>
+      <div class="article-arrow">&#8599;</div>
+    </a>
+
+    <a class="article-row" href="https://www.republicworld.com/lifestyle/traveltravelhacksthathelpyouenjoytripsevenwithbudgetconstraints" target="_blank" rel="noopener">
+      <div class="article-num">02</div>
+      <div class="article-body">
+        <div class="article-meta"><span class="article-cat">Lifestyle · Travel</span><span class="article-date">05 Oct 2019</span></div>
+        <div class="article-title">Travel hacks that help you enjoy vacation even with budget constraints</div>
+      </div>
+      <div class="article-arrow">&#8599;</div>
+    </a>
+
+    <a class="article-row" href="https://www.republicworld.com/entertainment/bollywood/amitabh-bachchan-some-of-his-most-popular-on-screen-pairings" target="_blank" rel="noopener">
+      <div class="article-num">03</div>
+      <div class="article-body">
+        <div class="article-meta"><span class="article-cat">Entertainment · Bollywood</span><span class="article-date">01 Oct 2019</span></div>
+        <div class="article-title">Amitabh Bachchan: Some of his most popular on-screen pairings</div>
+      </div>
+      <div class="article-arrow">&#8599;</div>
+    </a>
+
+    <a class="article-row" href="https://www.republicworld.com/entertainment/bollywood/deepikapadukonethestoryofbehindhowtheactorlandedintofilms" target="_blank" rel="noopener">
+      <div class="article-num">04</div>
+      <div class="article-body">
+        <div class="article-meta"><span class="article-cat">Entertainment · Bollywood</span><span class="article-date">10 Oct 2019</span></div>
+        <div class="article-title">Deepika Padukone's story of how she landed into films</div>
+      </div>
+      <div class="article-arrow">&#8599;</div>
+    </a>
+
+    <a class="article-row" href="https://www.republicworld.com/entertainment/bollywood/housefull4popularsongsfromthehousefullmoviefranchise" target="_blank" rel="noopener">
+      <div class="article-num">05</div>
+      <div class="article-body">
+        <div class="article-meta"><span class="article-cat">Entertainment · Bollywood</span><span class="article-date">17 Oct 2019</span></div>
+        <div class="article-title">Housefull 4: Popular songs from the Housefull movie franchise</div>
+      </div>
+      <div class="article-arrow">&#8599;</div>
+    </a>
+
+    <a class="article-row" href="https://www.republicworld.com/entertainment/bollywood/hollywoodcelebritiesknownfortheirworksasawriterandactor" target="_blank" rel="noopener">
+      <div class="article-num">06</div>
+      <div class="article-body">
+        <div class="article-meta"><span class="article-cat">Entertainment · Hollywood</span><span class="article-date">01 Nov 2019</span></div>
+        <div class="article-title">Hollywood celebrities known for their works as a writer and actor</div>
+      </div>
+      <div class="article-arrow">&#8599;</div>
+    </a>
+
+    <a class="article-row" href="https://www.republicworld.com/entertainment/bollywood/smartphoneslistof2018-and-2019flagshipsthathousedboxedcamerasetups" target="_blank" rel="noopener">
+      <div class="article-num">07</div>
+      <div class="article-body">
+        <div class="article-meta"><span class="article-cat">Tech · Smartphones</span><span class="article-date">14 Nov 2019</span></div>
+        <div class="article-title">Smartphones: List of 2018 &amp; 2019 flagships that have boxed camera setups</div>
+      </div>
+      <div class="article-arrow">&#8599;</div>
+    </a>
+
+    <a class="article-row" href="https://www.republicworld.com/entertainment/hollywood/why-did-victorious-get-cancelled-victorious-cast-talks-about-the-reaso" target="_blank" rel="noopener">
+      <div class="article-num">08</div>
+      <div class="article-body">
+        <div class="article-meta"><span class="article-cat">Entertainment · Hollywood</span><span class="article-date">19 Nov 2019</span></div>
+        <div class="article-title">Why did Victorious get cancelled? Victorious cast shares the reason</div>
+      </div>
+      <div class="article-arrow">&#8599;</div>
+    </a>
+
+    <a class="article-row" href="https://www.republicworld.com/tech/gadgetsvodafone-wifi-calling-when-will-vodafone-wifi-calling-launch-in-india" target="_blank" rel="noopener">
+      <div class="article-num">09</div>
+      <div class="article-body">
+        <div class="article-meta"><span class="article-cat">Tech · Telecom</span><span class="article-date">03 Feb 2020</span></div>
+        <div class="article-title">Vodafone WiFi Calling: When will the feature launch in India?</div>
+      </div>
+      <div class="article-arrow">&#8599;</div>
+    </a>
+
+    <a class="article-row" href="https://www.republicworld.com/science/space/indian-students-from-lpu-develop-an-ai-and-iot-powered-device-for-farmer" target="_blank" rel="noopener">
+      <div class="article-num">10</div>
+      <div class="article-body">
+        <div class="article-meta"><span class="article-cat">Science · Tech</span><span class="article-date">24 Feb 2020</span></div>
+        <div class="article-title">Indian students from LPU develop an AI &amp; IoT powered device to help farmers</div>
+      </div>
+      <div class="article-arrow">&#8599;</div>
+    </a>
+
+  </div>
+</div>
+
+<footer>
+  <span class="footer-note">All articles verified live · Byline: Gunjan Shah · Republic World, Mumbai</span>
+  <a class="footer-link" href="index.html">&#8592; Back to portfolio</a>
+</footer>
+
+</body>
+</html>
